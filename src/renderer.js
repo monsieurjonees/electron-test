@@ -4,3 +4,7 @@ function sendNotif() {
     console.log("poosh")
     window.ipc.sendNotif()
 }
+
+function helloClick() {
+    window.ipc.helloClick()
+}

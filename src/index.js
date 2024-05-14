@@ -50,6 +50,18 @@ app.on('window-all-closed', () => {
   }
 });
 
+function helloWindow() {
+  const hello = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+
+  hello.loadURL("https://open.spotify.com/track/62PaSfnXSMyLshYJrlTuL3?si=355783f1722c4fbe");
+}
+
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 function sendNotif() {
@@ -62,4 +74,9 @@ function sendNotif() {
 ipcMain.on("send-notif-pls", (event) => {
   console.log("hello");
   sendNotif();
+});
+
+ipcMain.on("hello", (event) => {
+  console.log("hello");
+  helloWindow();
 });

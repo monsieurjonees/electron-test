@@ -3,5 +3,6 @@
 const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('ipc', {
-    sendNotif: () => {ipcRenderer.send("send-notif-pls")}
+    sendNotif: () => {ipcRenderer.send("send-notif-pls")},
+    helloClick: () => {ipcRenderer.send("hello")}
 })
