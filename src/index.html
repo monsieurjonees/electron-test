@@ -6,18 +6,27 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="index.css" />
   </head>
+  <div class="TabBar">
+    <button onclick="openTab('Hello')">Hello</button>
+    <button onclick="openTab('ItsMe')">It's Me</button>
+    <button onclick="openTab('Wondering')">I was Wondering</button>
+  </div>
   <body>
-    <nav>
-      <ol>
-        <li><a onclick="helloClick()">Hello</a></li>
-        <li>It's Me</li>
-        <li>I was Wondering</li>
-      </ol><br>
-    </nav>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-    <button id="notifButton" onclick="sendNotif()">
-      Click me!
-    </button>
+    <div id="Hello" class="Tab" style="display: block;">
+      <h1>💖 Hello World!</h1>
+      <p>Welcome to your Electron application.</p>
+      <button id="notifButton" onclick="sendNotif()">
+        Click me!🦄
+      </button>
+    </div>
+    <div id="ItsMe" class="Tab">
+      <h1>It's Me</h1>
+      <p>🎵 The popular, hit single from Adele, released in 2015</p>
+    </div>
+    <div id="Wondering" class="Tab">
+      <h1>I was wondering</h1>
+      <p>If after all these years you'd like to meet. To go over everything. They say that time's supposed to heal ya, but I ain't done much healin'
+      </p>
+    </div>
   </body>
 </html>

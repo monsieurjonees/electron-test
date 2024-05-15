@@ -21,3 +21,11 @@ nav ol li {
 nav ol {
   padding: 0;
 }
+
+.Tab {
+  display: none;
+}
+
+.TabBar button {
+  font-family: "Comic Sans MS";
+}
