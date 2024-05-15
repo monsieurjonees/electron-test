@@ -1,32 +1,20 @@
 {
-  "name": "electron-test",
-  "productName": "electron-test",
-  "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "name": "tauri-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^7.4.0",
-    "@electron-forge/maker-deb": "^7.4.0",
-    "@electron-forge/maker-rpm": "^7.4.0",
-    "@electron-forge/maker-squirrel": "^7.4.0",
-    "@electron-forge/maker-zip": "^7.4.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
-    "@electron-forge/plugin-fuses": "^7.4.0",
-    "@electron/fuses": "^1.8.0",
-    "electron": "^30.0.5"
-  },
-  "keywords": [],
-  "author": "monsieurjonees <phil.reitzjones@me.com>",
-  "license": "MIT",
-  "dependencies": {
-    "electron-forge": "^5.2.4",
-    "electron-squirrel-startup": "^1.0.0"
+    "@tauri-apps/cli": "^1",
+    "vite": "^5.0.0",
+    "typescript": "^5.0.2"
   }
 }
