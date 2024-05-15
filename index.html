@@ -1,54 +1,59 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
+    <script src="src/index.js"></script>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/src/main.ts" defer></script>
-    <style>
-      .logo.vite:hover {
-        filter: drop-shadow(0 0 2em #747bff);
-      }
-
-      .logo.typescript:hover {
-        filter: drop-shadow(0 0 2em #2d79c7);
-      }
-    </style>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="src/index.css" />
   </head>
+  <header>
+    <div class="TabBar">
+      <!--Left to Right-->
 
-  <body>
-    <div class="container">
-      <h1>Welcome to Tauri!</h1>
+      <button class="TabButton active" onclick="openTab(event, 'Hello')">Hello</button>
+      <button class="TabButton" onclick="openTab(event, 'ItsMe')">It's Me</button>
 
-      <div class="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/src/assets/vite.svg" class="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img
-            src="/src/assets/tauri.svg"
-            class="logo tauri"
-            alt="Tauri logo"
-          />
-        </a>
-        <a href="https://www.typescriptlang.org/docs" target="_blank">
-          <img
-            src="/src/assets/typescript.svg"
-            class="logo typescript"
-            alt="typescript logo"
-          />
-        </a>
-      </div>
-
-      <p>Click on the Tauri logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-
-      <p id="greet-msg"></p>
+      <!--Right to left-->
+      <button class="TabButton" onclick="openTab(event, 'Settings')" style="float: right;">⚙️</button>
+      <button class="TabButton" onclick="openTab(event, 'Wondering')" style="float: right;">I was Wondering</button>
+    </div>
+  </header>
+  <body style="max-width: 90%;">
+    <div id="Hello" class="Tab" style="display: block;">
+      <h1>💖 Hello World!</h1>
+      <p>Welcome to your Electron application.</p>
+      <button id="notifButton" onclick="sendNotif()">
+        <!-- Doesn't work anymore -->
+        Click me!🦄
+      </button><br>
+      <img src="https://flat-icons.com/wp-content/uploads/2021/03/Graphic-Design-Is-My-Passion.jpg">
+    </div>
+    <div id="ItsMe" class="Tab">
+      <h1>It's Me</h1>
+      <p>🎵 The popular, hit single from Adele, released in 2015</p>
+    </div>
+    <div id="Wondering" class="Tab">
+      <h1>I was wondering</h1>
+      <p>If after all these years you'd like to meet. To go over everything. They say that time's supposed to heal ya, but I ain't done much healin'
+      </p>
+    </div>
+    <div id="Settings" class="Tab">
+      <h1>Settings</h1>
+      <h2>Color scheme?</h2>
+      <p>Weird (light).
+      </p>
+      <p>Emo (dark).
+      </p>
+      <p>Pink.
+      </p>
+      <p>Gay.
+      </p>
+      <p>Gray.
+      </p>
+      <p>Bisexual.
+      </p>
+      <p>Tree.
+      </p>
     </div>
   </body>
 </html>
