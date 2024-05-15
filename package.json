@@ -19,16 +19,13 @@
     "@electron-forge/maker-zip": "^7.4.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
-    "@electron/fuses": "^1.8.0"
+    "@electron/fuses": "^1.8.0",
+    "electron": "^30.0.5"
   },
   "keywords": [],
-  "author": {
-    "name": "monsieurjonees",
-    "email": "phil.reitzjones@me.com"
-  },
+  "author": "monsieurjonees <phil.reitzjones@me.com>",
   "license": "MIT",
   "dependencies": {
-    "electron": "^30.0.3",
     "electron-forge": "^5.2.4",
     "electron-squirrel-startup": "^1.0.0"
   }
