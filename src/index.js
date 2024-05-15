@@ -1,19 +1,6 @@
-// const notifButton = document.getElementById("notifButton");
+import { onLoad } from "./utils";
 
-// function sendNotif() {
-//     console.log("poosh")
-//     window.ipc.sendNotif()
-// }
-
-// function helloClick() {
-//     window.ipc.helloClick()
-// }
-
-
-export function test() {
-    console.log("g")
-}
-
+/** Switches to the relevant tab in response a click event. */
 function openTab(event) {
     var tabs = document.getElementsByClassName("Tab")
     for (let i = 0; i < tabs.length; i++) {
@@ -30,19 +17,16 @@ function openTab(event) {
     event.currentTarget.className += " active"
 }
 
-window.addEventListener(
-    "DOMContentLoaded",
-    () => {
-        var buttons = document.getElementsByClassName("TabButton")
-        for (let i = 0; i < buttons.length; i++) {
-            const element = buttons[i];
-            element.addEventListener("click", openTab)
-        }
-        console.log("g")
-    }
-)
-
 // peepeepoopoo
 // function setColorScheme(event, scheme) {
 //     var tabs
 // }
+
+onLoad(() => {
+    // Listen for button clicks (tab changes)
+    var buttons = document.getElementsByClassName("TabButton")
+    for (let i = 0; i < buttons.length; i++) {
+        const element = buttons[i];
+        element.addEventListener("click", openTab)
+    }
+})
