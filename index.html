@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      function openTab(event, tab) {
-        var tabs = document.getElementsByClassName("Tab")
-        for (let i = 0; i < tabs.length; i++) {
-            const element = tabs[i];
-            element.style.display = "none"
-            element.className.replace(" active", "")
-        }
-
-        var tabLink = document.getElementsByClassName("TabButton active")[0]
-        tabLink.className = "TabButton"
-
-        var tabElement = document.getElementById(tab)
-        tabElement.style.display = "block"
-        event.currentTarget.className += " active"
-      }
-    </script>
+    <script type="module" src="/src/index.js" defer></script>
     <script type="module" src="/src/main.ts" defer></script>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
@@ -27,12 +11,12 @@
     <div class="TabBar">
       <!--Left to Right-->
 
-      <button class="TabButton active" onclick="openTab(event, 'Hello')">Hello</button>
-      <button class="TabButton" onclick="openTab(event, 'ItsMe')">It's Me</button>
+      <button class="TabButton active" name="Hello">Hello</button>
+      <button class="TabButton" name="ItsMe">It's Me</button>
 
       <!--Right to left-->
-      <button class="TabButton" onclick="openTab(event, 'Settings')" style="float: right;">⚙️</button>
-      <button class="TabButton" onclick="openTab(event, 'Wondering')" style="float: right;">I was Wondering</button>
+      <button class="TabButton" style="float: right;" name="Settings">⚙️</button>
+      <button class="TabButton" style="float: right;" name="Wondering">I was Wondering</button>
     </div>
   </header>
   <body style="max-width: 90%;">

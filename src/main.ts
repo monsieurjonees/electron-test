@@ -13,6 +13,8 @@ async function showNotif() {
 
 window.addEventListener("DOMContentLoaded", () => {
   console.log("h")
-  showNotif();
-  console.log("h")
+  document.getElementById("notifButton")?.addEventListener(
+    "click",
+    (_) => {showNotif()}
+  )
 });
