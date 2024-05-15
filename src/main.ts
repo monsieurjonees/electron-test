@@ -1,22 +1,18 @@
-import { invoke } from "@tauri-apps/api/tauri";
+import { isPermissionGranted, requestPermission, sendNotification } from '@tauri-apps/api/notification';
 
-let greetInputEl: HTMLInputElement | null;
-let greetMsgEl: HTMLElement | null;
-
-async function greet() {
-  if (greetMsgEl && greetInputEl) {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-    greetMsgEl.textContent = await invoke("greet", {
-      name: greetInputEl.value,
-    });
+async function showNotif() {
+  let permissionGranted = await isPermissionGranted();
+  if (!permissionGranted) {
+    const permission = await requestPermission();
+    permissionGranted = permission === 'granted';
+  }
+  if (permissionGranted) {
+    sendNotification({ title: 'urmom', body: 'lololololololol gottem' });
   }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
-  });
+  console.log("h")
+  showNotif();
+  console.log("h")
 });

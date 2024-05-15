@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="src/index.js"></script>
+    <script>
+      function openTab(event, tab) {
+        var tabs = document.getElementsByClassName("Tab")
+        for (let i = 0; i < tabs.length; i++) {
+            const element = tabs[i];
+            element.style.display = "none"
+            element.className.replace(" active", "")
+        }
+
+        var tabLink = document.getElementsByClassName("TabButton active")[0]
+        tabLink.className = "TabButton"
+
+        var tabElement = document.getElementById(tab)
+        tabElement.style.display = "block"
+        event.currentTarget.className += " active"
+      }
+    </script>
+    <script type="module" src="/src/main.ts" defer></script>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
     <link rel="stylesheet" href="src/index.css" />
@@ -22,7 +39,7 @@
     <div id="Hello" class="Tab" style="display: block;">
       <h1>💖 Hello World!</h1>
       <p>Welcome to your Electron application.</p>
-      <button id="notifButton" onclick="sendNotif()">
+      <button id="notifButton">
         <!-- Doesn't work anymore -->
         Click me!🦄
       </button><br>
