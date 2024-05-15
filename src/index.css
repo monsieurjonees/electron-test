@@ -4,8 +4,14 @@ body {
   font-family: 'Comic Sans MS';
   margin: auto;
   /* max-width: 90%; */
-  padding: 1rem;
+  /* padding: 1rem; */
   color: black;
+}
+
+.TabArea {
+  max-width: 90%;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 header {
@@ -13,7 +19,7 @@ header {
 }
 
 html {
-  background-color: aliceblue;
+  background-color: lavender;
 }
 
 nav ol li {
@@ -32,13 +38,18 @@ nav ol {
 
 .TabBar {
   background-color: pink;
+  margin-top: 1rem;
 }
 
 .TabBar button {
   font-family: "Comic Sans MS";
   background-color: pink;
-  min-height: 3rem;
+  min-height: 2.5rem;
   border: 0;
+  margin-top: 0.5rem;
+  padding-left: 1ch;
+  padding-right: 1ch;
+  min-width: fit-content;
 }
 
 .TabBar button:hover{
@@ -48,6 +59,5 @@ nav ol {
 .TabBar button.active {
   background-color: salmon;
   color: white;
-  min-height: 3rem;
   border: 0;
 }
