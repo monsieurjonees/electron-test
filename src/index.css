@@ -3,9 +3,13 @@ body {
     Arial, sans-serif; */
   font-family: 'Comic Sans MS';
   margin: auto;
-  max-width: 38rem;
+  /* max-width: 90%; */
   padding: 1rem;
   color: black;
+}
+
+header {
+  max-width: 100%;
 }
 
 html {
@@ -26,6 +30,24 @@ nav ol {
   display: none;
 }
 
+.TabBar {
+  background-color: pink;
+}
+
 .TabBar button {
   font-family: "Comic Sans MS";
+  background-color: pink;
+  min-height: 3rem;
+  border: 0;
+}
+
+.TabBar button:hover{
+  background-color: lightpink;
+}
+
+.TabBar button.active {
+  background-color: salmon;
+  color: white;
+  min-height: 3rem;
+  border: 0;
 }
