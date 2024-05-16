@@ -10,3 +10,7 @@ export function onLoad(closure) {
         "DOMContentLoaded", closure
     )
 }
+
+export function print(str) {
+    console.log(str)
+}
