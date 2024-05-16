@@ -43,3 +43,7 @@ html {
         rgba(120, 0, 137, 0.33) 100%
     );
 }
+
+.ThemeButton {
+    font-family: "Lobster Two";
+}

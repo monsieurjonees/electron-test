@@ -55,3 +55,11 @@ html {
 .TabButton.special:hover {
   background-color: lightpink;
 }
+
+.ThemeButton {
+  font-family: "Comic Sans MS";
+  text-shadow: 0px 0px 1ch blue;
+  font-size: medium;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+}
