@@ -34,10 +34,41 @@ function openTab(event) {
     event.currentTarget.className += " active"
 }
 
+function addStyleSheet(path, className, id = "") {
+    var newStyle = document.createElement("link")
+    newStyle.type = "text/css"
+    newStyle.rel = "stylesheet"
+    if (id.length > 0) {
+        newStyle.id = id
+    }
+    newStyle.className = className
+    newStyle.href = path
+    document.head.appendChild(newStyle)
+}
+
 // peepeepoopoo
-// function setColorScheme(event, scheme) {
-//     var tabs
-// }
+function setColorScheme(event) {
+    var scheme = event.currentTarget.name
+
+    var themeElements = document.getElementsByClassName("Theme")
+    for (let i = 0; i < themeElements.length; i++) {
+        const theme = themeElements[i];
+        if (theme.className)
+        document.head.removeChild(theme)
+    }
+
+    switch (scheme) {
+        case "gay":
+            addStyleSheet("/src/themes/gay.css", "Theme")
+            break;
+        
+        case "light":
+            break;
+    
+        default:
+            break;
+    }
+}
 
 onLoad(() => {
     // Listen for button clicks (tab changes)
@@ -45,5 +76,11 @@ onLoad(() => {
     for (let i = 0; i < buttons.length; i++) {
         const element = buttons[i];
         element.addEventListener("click", openTab)
+    }
+
+    buttons = document.getElementsByClassName("ThemeButton")
+    for (let i = 0; i < buttons.length; i++) {
+        const element = buttons[i];
+        element.addEventListener("click", setColorScheme)
     }
 })

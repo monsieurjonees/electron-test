@@ -55,11 +55,3 @@ html {
 .TabButton.special:hover {
   background-color: lightpink;
 }
-
-.TabButton.special.active {
-  background-color: purple;
-}
-
-.Tab.special {
-  background-color: purple;
-}
