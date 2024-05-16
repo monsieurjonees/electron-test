@@ -1,5 +1,5 @@
 body {
-    font-family: 'Lobster Two';
+    font-family: 'MedievalSharp';
     margin: auto;
     color: white;
     text-shadow: 0px 0px 0.25ch white;
@@ -31,7 +31,7 @@ html {
 }
 
 .TabButton {
-    font-family: "Lobster Two";
+    font-family: 'MedievalSharp';
     background-color: white;
     background: linear-gradient(
         90deg, 
@@ -45,5 +45,22 @@ html {
 }
 
 .ThemeButton {
-    font-family: "Lobster Two";
+    font-family: 'MedievalSharp';
+}
+
+div.PlannerContainer {
+    background-color: rgba(156,78,151,0.33);
+    color: plum;
+}
+
+div.DayColumn {
+    color: rgba(215,0,113,0.33);
+    border-color: rgba(0,53,169,0.33);
+    /* background-color: rgba(156,78,151,0.33); */
+}
+
+div.DayColumn:hover {
+    color: rgba(215,0,113,0.5);
+    border-color: rgba(0,53,169,0.5);
+    /* background-color: rgba(156,78,151,0.5); */
 }

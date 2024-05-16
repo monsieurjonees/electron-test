@@ -1,4 +1,5 @@
 import { onLoad, print } from "./utils";
+import { loadSettings, getSettings, changeTheme } from "./storage.ts"
 
 /** Switches to the relevant tab in response a click event. */
 function openTab(event) {
@@ -11,25 +12,25 @@ function openTab(event) {
 
     var tabLink = document.getElementsByClassName("TabButton active")[0]
     tabLink.className = tabLink.className.replace(" active", "")
-    if (tabLink.className == "TabButton special") {
-        var elements = document.getElementsByClassName("SpecialSheet")
-        for (let i = 0; i < elements.length; i++) {
-            const element = elements[i];
-            document.head.removeChild(element)
-        }
-    }
+    // if (tabLink.className == "TabButton special") {
+    //     var elements = document.getElementsByClassName("SpecialSheet")
+    //     for (let i = 0; i < elements.length; i++) {
+    //         const element = elements[i];
+    //         document.head.removeChild(element)
+    //     }
+    // }
 
     var tabElement = document.getElementById(event.currentTarget.name)
-    if (event.currentTarget.className == "TabButton special") {
-        console.log("h")
-        var head = document.head
-        var newStyle = document.createElement("link")
-        newStyle.type = "text/css"
-        newStyle.rel = "stylesheet"
-        newStyle.className = "SpecialSheet"
-        newStyle.href = "/src/special.css"
-        head.appendChild(newStyle)
-    }
+    // if (event.currentTarget.className == "TabButton special") {
+    //     console.log("h")
+    //     var head = document.head
+    //     var newStyle = document.createElement("link")
+    //     newStyle.type = "text/css"
+    //     newStyle.rel = "stylesheet"
+    //     newStyle.className = "SpecialSheet"
+    //     newStyle.href = "/src/special.css"
+    //     head.appendChild(newStyle)
+    // }
     tabElement.style.display = "block"
     event.currentTarget.className += " active"
 }
@@ -47,7 +48,7 @@ function addStyleSheet(path, className, id = "") {
 }
 
 // peepeepoopoo
-function setColorScheme(event) {
+async function setColorScheme(event) {
     var scheme = event.currentTarget.name
 
     var themeElements = document.getElementsByClassName("Theme")
@@ -56,25 +57,11 @@ function setColorScheme(event) {
         if (theme.className)
         document.head.removeChild(theme)
     }
-
-    switch (scheme) {
-        case "gay":
-            addStyleSheet("/src/themes/gay.css", "Theme")
-            break;
-        
-        case "bisexual":
-            addStyleSheet("/src/themes/bisexual.css", "Theme")
-            break;
-        
-        case "light":
-            break;
-    
-        default:
-            break;
-    }
+    setTheme(scheme)
+    await changeTheme(scheme);
 }
 
-onLoad(() => {
+onLoad(async () => {
     // Listen for button clicks (tab changes)
     var buttons = document.getElementsByClassName("TabButton")
     for (let i = 0; i < buttons.length; i++) {
@@ -87,4 +74,30 @@ onLoad(() => {
         const element = buttons[i];
         element.addEventListener("click", setColorScheme)
     }
+
+    await loadSettings()
+    var theme = getSettings().lastTheme
+
 })
+
+function setTheme(scheme) {
+    switch (scheme) {
+        case "gay":
+            addStyleSheet("/src/themes/gay.css", "Theme");
+            break;
+
+        case "bisexual":
+            addStyleSheet("/src/themes/bisexual.css", "Theme");
+            break;
+
+        case "light":
+            break;
+
+        case "emo":
+            addStyleSheet("/src/themes/emo.css", "Theme");
+            break;
+
+        default:
+            break;
+    }
+}

@@ -19,14 +19,17 @@
       },
       "notification": {
         "all": true
+      },
+      "fs": {
+        "all": true
       }
     },
     "windows": [
       {
         "title": "tauri-test",
-        "width": 800,
+        "width": 850,
         "height": 600,
-        "minWidth": 750,
+        "minWidth": 800,
         "minHeight": 600
       }
     ],

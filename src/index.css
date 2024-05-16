@@ -2,10 +2,14 @@ body {
   font-family: 'Comic Sans MS';
   margin: auto;
   color: black;
+  text-shadow: 0 0 0.5rem rgba(127, 127, 200, 0.75);
+}
+
+:hover {
+  transition: ease-in-out 200ms;
 }
 
 .TabArea {
-  max-width: 90%;
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -48,13 +52,6 @@ html {
   box-shadow: 0px -3px 2px 0px lightgray;
 }
 
-.TabButton.special {
-  background-color: pink;
-}
-
-.TabButton.special:hover {
-  background-color: lightpink;
-}
 
 .ThemeButton {
   font-family: "Comic Sans MS";
@@ -62,4 +59,48 @@ html {
   font-size: medium;
   background-color: rgba(0,0,0,0);
   border: 0;
+}
+
+div.DayColumn {
+  margin-top: 0px;
+  /* width: 12.5%; */
+  position: relative;
+  padding: 0.5ch;
+  background-color: white;
+  min-height: 50ch;
+  word-break: break-all;
+  border-style: dotted;
+  border-radius: 1rem;  
+  z-index: 1;
+}
+
+div.DayColumn:hover {
+  box-shadow: 0px 0px 1rem 0.25rem rgba(127, 127, 192, 0.75);
+  z-index: 10;
+}
+
+div.PlannerContainer {
+  font-family: "Lobster Two";
+  margin-top: 0px;
+  column-count: 7;
+  column-gap: 0;
+  background-color: aliceblue;
+  padding: 1rem;
+  /* padding-left: 6.25%; */
+  /* padding-right: 6.25%; */
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1rem 0.25rem rgba(127, 127, 192, 0.75);
+  text-shadow: none;
+}
+
+div.DayColumn ul {
+  list-style-type: circle;
+  margin-left: 0;
+  padding: 1rem;
+}
+
+div.DayColumn h4 {
+  margin: 0;
+  margin-bottom: 1ch;
+  text-align: center;
 }

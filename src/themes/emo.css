@@ -1,0 +1,57 @@
+
+body {
+    font-family: 'MedievalSharp';
+    color: rgb(255, 106, 106);
+    text-shadow: 0 0 2ch red;
+}
+
+.TabBar {
+    background-color: black;
+}
+
+html {
+    background-color: rgb(21, 21, 21);
+}
+
+.TabButton {
+    font-family: 'MedievalSharp';
+    background-color: dimgray;
+}
+
+.TabButton:hover {
+    background-color: rgb(116, 64, 165);
+    color: white;
+}
+
+.TabButton.active {
+    background-color: rgb(21, 21, 21);
+}
+
+.ThemeButton {
+    font-family: 'MedievalSharp';
+    
+}
+
+div.PlannerContainer {
+    background-color: black;
+    color: maroon;
+    box-shadow: 0px 0px 1rem 0.25rem rgba(255, 0, 0, 0.75);
+}
+
+div.DayColumn {
+    position: relative;
+    background-color: dimgray;
+    color: maroon;
+    text-shadow: 0 0 1rem red;
+}
+
+div.DayColumn:hover {
+    box-shadow: 0px 0px 1rem 0.25rem red;
+    transition: ease-in-out 200ms;
+    color: red;
+}
+
+.ThemeButton {
+    color: red;
+    text-shadow: 0 0 1rem red;
+}
