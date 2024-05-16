@@ -62,6 +62,10 @@ function setColorScheme(event) {
             addStyleSheet("/src/themes/gay.css", "Theme")
             break;
         
+        case "bisexual":
+            addStyleSheet("/src/themes/bisexual.css", "Theme")
+            break;
+        
         case "light":
             break;
     
