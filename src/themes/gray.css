@@ -1,0 +1,52 @@
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-shadow: 0 0 2ch ;
+}
+
+.TabBar{
+    background-color: dimgray;
+}
+
+html {
+    background-color: lightgray;
+}
+
+.TabButton {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: darkgray;
+}
+
+.TabButton:hover {
+    background-color: white;
+}
+
+.TabButton.active {
+    background-color: lightgray;
+    color: black;
+}
+
+.ThemeButton {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-shadow: 0 0 1rem darkgray;
+}
+
+div.plannerContainer {
+    background-color: darkgray;
+    color: black;
+    box-shadow: 0px 0px 1rem 0.25rem darkgray;
+}
+
+div.DayColumn {
+    background-color: darkgray;
+    text-shadow: 0 0 1rem darkgray;
+    color: black;
+}
+
+div.DayColumn:hover {
+    background-color: lightgray;
+    box-shadow: 0px 0px 1rem 0.25rem darkgray;
+    color: black;
+}

@@ -77,7 +77,7 @@ onLoad(async () => {
 
     await loadSettings()
     var theme = getSettings().lastTheme
-
+    setTheme(theme)
 })
 
 function setTheme(scheme) {
@@ -97,6 +97,10 @@ function setTheme(scheme) {
             addStyleSheet("/src/themes/emo.css", "Theme");
             break;
 
+        case "gray":
+            addStyleSheet("/src/themes/gray.css", "Theme");
+            break;
+            
         default:
             break;
     }

@@ -29,7 +29,8 @@ html {
 
 .ThemeButton {
     font-family: 'MedievalSharp';
-    
+    color: red;
+    text-shadow: 0 0 1rem red;
 }
 
 div.PlannerContainer {
@@ -49,9 +50,4 @@ div.DayColumn:hover {
     box-shadow: 0px 0px 1rem 0.25rem red;
     transition: ease-in-out 200ms;
     color: red;
-}
-
-.ThemeButton {
-    color: red;
-    text-shadow: 0 0 1rem red;
 }
