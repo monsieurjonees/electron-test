@@ -1,0 +1,23 @@
+
+body {
+    font-family: fantasy;
+    color: hotpink;
+    text-shadow: 0 0 2ch deeppink;
+}
+
+.TabBar {
+    background-color: pink;
+}
+
+html {
+    background-color: lightpink;
+}
+
+.TabButton {
+    font-family: fantasy;
+    color: fuchsia;
+}
+
+.TabButton:hover {
+    background-color: lightpink;
+}

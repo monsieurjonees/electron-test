@@ -27,6 +27,7 @@ html {
 }
 
 .TabBar {
+  display: flex;
   background-color: white;
   justify-content: space-between;
 }
@@ -39,8 +40,8 @@ html {
   margin-top: 1rem;
   padding-left: 1ch;
   padding-right: 1ch;
-  /* margin-right: 0.5ch;
-  margin-left: 0.5ch; */
+  margin-right: 0.5ch;
+  margin-left: 0.5ch;
   min-width: fit-content;
 }
 
