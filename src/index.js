@@ -51,12 +51,7 @@ function addStyleSheet(path, className, id = "") {
 async function setColorScheme(event) {
     var scheme = event.currentTarget.name
 
-    var themeElements = document.getElementsByClassName("Theme")
-    for (let i = 0; i < themeElements.length; i++) {
-        const theme = themeElements[i];
-        if (theme.className)
-        document.head.removeChild(theme)
-    }
+    
     setTheme(scheme)
     await changeTheme(scheme);
 }
@@ -81,6 +76,13 @@ onLoad(async () => {
 })
 
 function setTheme(scheme) {
+    var themeElements = document.getElementsByClassName("Theme")
+    for (let i = 0; i < themeElements.length; i++) {
+        const theme = themeElements[i];
+        if (theme.className)
+        document.head.removeChild(theme)
+    }
+
     switch (scheme) {
         case "gay":
             addStyleSheet("/src/themes/gay.css", "Theme");
@@ -96,12 +98,18 @@ function setTheme(scheme) {
         case "emo":
             addStyleSheet("/src/themes/emo.css", "Theme");
             break;
-
+        case "strawberry":
+            addStyleSheet("/src/themes/strawberry.css", "Theme");
+            break;
         case "gray":
             addStyleSheet("/src/themes/gray.css", "Theme");
             break;
-            
+        case "matcha":
+            addStyleSheet("/src/themes/matcha.css", "Theme");
+            break;
+
         default:
             break;
     }
 }
+window.setTheme = setTheme

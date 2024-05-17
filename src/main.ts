@@ -15,6 +15,6 @@ window.addEventListener("DOMContentLoaded", () => {
   console.log("h")
   document.getElementById("notifButton")?.addEventListener(
     "click",
-    (_) => {showNotif()}
+    async (_) => {await showNotif()}
   )
 });

@@ -2,6 +2,7 @@
 <html>
   <head>
     <script type="module" src="/src/index.js" defer></script>
+    <script type="module" src="/src/leTheme.js" defer></script>
     <script type="module" src="/src/main.ts" defer></script>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
@@ -13,7 +14,7 @@
     <!-- <link rel="stylesheet" href="src/themes/gay.css" class="Theme"/> -->
   </head>
   <header>
-    <div class="TabBar">
+    <div class="TabBar" id="TabBar">
       <button class="TabButton active" name="Hello" style="margin-left: 2rem;">Hello</button>
       <button class="TabButton" name="ItsMe">It's Me</button>
 
@@ -73,17 +74,33 @@
         <h1>Settings</h1>
         <h2>Color scheme?</h2>
         <button class="ThemeButton" name="light">Weird (light).</button> <br>
-        <button class="ThemeButton" name="emo">Emo (dark).</button>
-        <p>Strawberry.
-        </p>
+        <button class="ThemeButton" name="emo">Emo (dark).</button> <br>
+        <button class="ThemeButton" name="strawberry">Strawberry.</button> <br>
         <button class="ThemeButton" name="gay">Gay.</button> <br>
         <button class="ThemeButton" name="gray">Gray.</button> <br>
-        <button class="ThemeButton" name="bisexual">Bisexual.</button>
-        <p>Tree.
+        <button class="ThemeButton" name="bisexual">Bisexual.</button> <br>
+        <button class="ThemeButton" name="matcha">Matcha.</button> <br>
         </p>
       </div>
       <div id="Customizer" class="Tab">
         <h1>Ainsi tu inventes le theme du Narcisse exauce</h1>
+        <form onsubmit="fontEvent(event)">
+            Font Family: <input type="text" id="FontBox">
+            <input type="submit" >
+        </form>
+        <form onsubmit="changePrimaryFontColor(event)">
+            Primary Font Color: <input type="color" id="Font1Color">
+            <input type="submit" >
+        </form><br>
+        <!-- Not Text -->
+        <form onsubmit="changeHeaderColor(event)">
+            Tab Menu Color: <input type="color" id="TabBarColor">
+            <input type="submit" >
+        </form>
+        <form onsubmit="changeHTMLColor(event)">
+            Primary Color: <input type="color" id="HTMLColor">
+            <input type="submit" >
+        </form>
       </div>
     </div>
   </body>

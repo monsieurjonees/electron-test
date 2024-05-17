@@ -1,23 +1,57 @@
 
 body {
-    font-family: fantasy;
-    color: hotpink;
-    text-shadow: 0 0 2ch deeppink;
+    font-family: CommercialScript BT;
+    color: white;
+    text-shadow: 0 0 2ch #e0653b;
 }
 
 .TabBar {
-    background-color: pink;
+    background-color: #fb6966;
 }
 
 html {
-    background-color: lightpink;
+    background-color: #fbd1c7;
 }
 
 .TabButton {
-    font-family: fantasy;
-    color: fuchsia;
+    font-family: CommercialScript BT;
+    background-color: #fcb3ac;
+    color: olive;
+
 }
 
 .TabButton:hover {
-    background-color: lightpink;
+    font-family: CommercialScript BT;
+    background-color: #fbd1c7;
+}
+
+.TabButton.active {
+    background-color: #fcb3ac;
+    font-family: CommercialScript BT;
+    color: olive;
+}
+
+.ThemeButton {
+    font-family: CommercialScript BT;
+    color: #fb6966;
+    text-shadow: 0 0 1rem #fb6966;
+}
+
+div.PlannerContainer {
+    background-color: #fbd1c7;
+    color: #fcb3ac;
+    box-shadow: 0px 0px 1rem 0.25rem #fb6966;
+}
+
+div.DayColumn {
+    /* background-color: lightpink; */
+    text-shadow: 0 0 1rem #fbd1c7;
+    color: #fb6966;
+}
+
+div.DayColumn:hover {
+    /* color: hotpink; */
+    text-shadow: #fb6966;
+    transition: ease-in-out 200ms;
+    box-shadow: 0px 0px 1rem 0.25rem e0653b;
 }
