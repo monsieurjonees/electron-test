@@ -1,5 +1,11 @@
 import { onLoad, print } from "./utils"
 
+function appendStyle(str, id) {
+    var newStyle = document.createElement("style")
+    newStyle.textContent = str
+    newStyle.id = id
+    document.head.appendChild(newStyle)
+}
 
 export function changeFontFamily(target) {
     document.body.style.fontFamily = target
@@ -37,8 +43,10 @@ function changeHeaderColor(e) {
 }
 
 function _changeHTMLColor(color) {
-    document.getElementsByTagName("html")[0].style.backgroundColor = color
-    
+    var styleString = ""
+    styleString += "html { background-color: " + color + "; } "
+    styleString += ".TabButton.active { background-color: " + color + "; }"
+    appendStyle(styleString)
 }
 
 function changeHTMLColor(e) {
