@@ -1,46 +1,23 @@
-
-body {
-    font-family: 'MedievalSharp';
-    color: rgb(255, 106, 106);
-    text-shadow: 0 0 2ch red;
-}
-
-.TabBar {
-    background-color: black;
-}
-
-html {
-    background-color: rgb(21, 21, 21);
-}
-
-.TabButton {
-    font-family: 'MedievalSharp';
-    background-color: dimgray;
-}
-
-.TabButton:hover {
-    background-color: rgb(116, 64, 165);
-    color: white;
-}
-
-.TabButton.active {
-    background-color: rgb(21, 21, 21);
-}
-
-.ThemeButton {
-    font-family: 'MedievalSharp';
-    color: red;
-    text-shadow: 0 0 1rem red;
-}
-
-div.PlannerContainer {
-    background-color: black;
-    color: maroon;
-    box-shadow: 0px 0px 1rem 0.25rem rgba(255, 0, 0, 0.75);
+/* The properties here can be overriden for easy theme creation. */
+:root {
+    /* Various fill colors */
+    --primary-color: rgb(21, 21, 21);
+    --secondary-color: black;
+    --container-background: black;
+    --unselected-tab-and-shadow: dimgray;
+    --tab-hover: purple;
+    /* Shadow colors */
+    --primary-shadow-color: rgba(255, 0, 0, 0.75);
+    --secondary-shadow-color: red;
+    /* Fonts */
+    --primary-font-family: 'MedievalSharp';
+    --seconday-font-family: 'Lobster Two';
+    /* Text Color */
+    --primary-text-color: rgb(255, 106, 106);
+    --secondary-text-color: maroon;
 }
 
 div.DayColumn {
-    position: relative;
     background-color: dimgray;
     color: maroon;
     text-shadow: 0 0 1rem red;
@@ -48,6 +25,13 @@ div.DayColumn {
 
 div.DayColumn:hover {
     box-shadow: 0px 0px 1rem 0.25rem red;
-    transition: ease-in-out 200ms;
     color: red;
+}
+
+.TabButton:hover {
+    color: white;
+}
+
+.TabButton.active {
+    color: white;
 }
