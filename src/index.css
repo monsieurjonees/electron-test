@@ -1,8 +1,27 @@
+/* The properties here can be overriden for easy theme creation. */
+:root {
+  /* Various fill colors */
+  --primary-color: lightblue;
+  --secondary-color: white;
+  --container-background: aliceblue;
+  --unselected-tab-and-shadow: lightgray;
+  --tab-hover: lightcyan;
+  /* Shadow colors */
+  --primary-shadow-color: rgba(127, 127, 200, 0.75);
+  --secondary-shadow-color: blue;
+  /* Fonts */
+  --primary-font-family: 'Comic Sans MS';
+  --seconday-font-family: 'Lobster Two';
+  /* Text Color */
+  --primary-text-color: black;
+  --secondary-text-color: black;
+}
+
 body {
-  font-family: 'Comic Sans MS';
+  font-family: var(--primary-font-family);
   margin: auto;
-  color: black;
-  text-shadow: 0 0 0.5rem rgba(127, 127, 200, 0.75);
+  color: var(--primary-text-color);
+  text-shadow: 0 0 0.5rem var(--primary-shadow-color);
 }
 
 button:hover {
@@ -19,7 +38,7 @@ header {
 }
 
 html {
-  background-color: lightblue;
+  background-color: var(--primary-color);
 }
 
 .Tab {
@@ -28,13 +47,13 @@ html {
 
 .TabBar {
   display: flex;
-  background-color: white;
+  background-color: var(--secondary-color);
   justify-content: space-between;
 }
 
 .TabButton {
   font-family: "Comic Sans MS";
-  background-color: lightgray;
+  background-color: var(--unselected-tab-and-shadow);
   min-height: 1.75rem;
   border: 0;
   margin-top: 1rem;
@@ -46,20 +65,20 @@ html {
 }
 
 .TabButton:hover{
-  background-color: lightcyan;
+  background-color: var(--tab-hover);
 }
 
 .TabButton.active {
-  background-color: lightblue;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   margin-bottom: 0;
-  box-shadow: 0px -3px 2px 0px lightgray;
+  box-shadow: 0px -3px 2px 0px var(--unselected-tab-and-shadow);
 }
 
 
 .ThemeButton {
   font-family: "Comic Sans MS";
-  text-shadow: 0px 0px 1ch blue;
+  text-shadow: 0px 0px 1ch var(--primary-shadow-color);
   font-size: medium;
   background-color: rgba(0,0,0,0);
   border: 0;
@@ -67,10 +86,9 @@ html {
 
 div.DayColumn {
   margin-top: 0px;
-  /* width: 12.5%; */
   position: relative;
   padding: 0.5ch;
-  background-color: white;
+  background-color: var(--secondary-color);
   min-height: 50ch;
   word-break: break-all;
   border-style: dotted;
@@ -80,21 +98,20 @@ div.DayColumn {
 }
 
 div.DayColumn:hover {
-  box-shadow: 0px 0px 1rem 0.25rem rgba(127, 127, 192, 0.75);
+  box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color);
   z-index: 10;
 }
 
 div.PlannerContainer {
-  font-family: "Lobster Two";
+  font-family: var(--seconday-font-family);
+  color: var(--secondary-text-color);
   margin-top: 0px;
   column-count: 7;
   column-gap: 0;
-  background-color: aliceblue;
+  background-color: var(--container-background);
   padding: 1rem;
-  /* padding-left: 6.25%; */
-  /* padding-right: 6.25%; */
   border-radius: 1rem;
-  box-shadow: 0px 0px 1rem 0.25rem rgba(127, 127, 192, 0.75);
+  box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color);
   text-shadow: none;
 }
 
