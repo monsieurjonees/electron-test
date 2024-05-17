@@ -14,3 +14,21 @@ export function onLoad(closure) {
 export function print(str) {
     console.log(str)
 }
+
+/**
+ * Converts string str from camelCase to snake_case.
+ * @param {string} str 
+ * @returns 
+ */
+export function camelToSnake(str) {
+    return str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`)
+}
+
+/**
+ * Converts string str from camelCase to hyphenated-case.
+ * @param {string} str 
+ * @returns 
+ */
+export function camelToHyphenated(str) {
+    return str.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)
+}

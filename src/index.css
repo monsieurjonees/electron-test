@@ -11,7 +11,7 @@
   --secondary-shadow-color: blue;
   /* Fonts */
   --primary-font-family: 'Comic Sans MS';
-  --seconday-font-family: 'Lobster Two';
+  --secondary-font-family: 'Lobster Two';
   /* Text Color */
   --primary-text-color: black;
   --secondary-text-color: black;
@@ -104,7 +104,7 @@ div.DayColumn:hover {
 }
 
 div.PlannerContainer {
-  font-family: var(--seconday-font-family);
+  font-family: var(--secondary-font-family);
   color: var(--secondary-text-color);
   margin-top: 0px;
   column-count: 7;

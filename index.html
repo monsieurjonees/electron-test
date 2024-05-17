@@ -85,21 +85,22 @@
       <div id="Customizer" class="Tab">
         <h1>Ainsi tu inventes le theme du Narcisse exauce</h1>
         <form onsubmit="fontEvent(event)">
-            Font Family: <input type="text" id="FontBox">
+            Primary Font Family: <input type="text" id="FontBox">
             <input type="submit" >
         </form>
-        <form onsubmit="changePrimaryFontColor(event)">
+        <form onchange="primaryFontColorEvent(event)">
             Primary Font Color: <input type="color" id="Font1Color">
+        </form><br>
+        <form onsubmit="font2Event(event)">
+            Secondary Font Family: <input type="text" id="Font2Box">
             <input type="submit" >
+        </form>
+        <form onchange="secondaryFontColorEvent(event)">
+            Secondary Font Color: <input type="color" id="Font2Color">
         </form><br>
         <!-- Not Text -->
-        <form onsubmit="changeHeaderColor(event)">
-            Tab Menu Color: <input type="color" id="TabBarColor">
-            <input type="submit" >
-        </form>
-        <form onsubmit="changeHTMLColor(event)">
-            Primary Color: <input type="color" id="HTMLColor">
-            <input type="submit" >
+        <form onchange="primaryColorEvent(event)">
+            Primary Color: <input type="color" id="PrimaryColor">
         </form>
       </div>
     </div>

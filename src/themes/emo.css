@@ -2,7 +2,7 @@
 :root {
     /* Various fill colors */
     --primary-color: rgb(21, 21, 21);
-    --secondary-color: black;
+    --secondary-color: rgb(0, 0, 0);
     --container-background: black;
     --unselected-tab-and-shadow: dimgray;
     --tab-hover: purple;
@@ -11,7 +11,7 @@
     --secondary-shadow-color: red;
     /* Fonts */
     --primary-font-family: 'MedievalSharp';
-    --seconday-font-family: 'Lobster Two';
+    --secondary-font-family: 'Lobster Two';
     /* Text Color */
     --primary-text-color: rgb(255, 106, 106);
     --secondary-text-color: maroon;
@@ -19,7 +19,7 @@
 
 div.DayColumn {
     background-color: dimgray;
-    color: maroon;
+    color: var(--secondary-text-color);
     text-shadow: 0 0 1rem red;
 }
 
