@@ -1,8 +1,13 @@
 import { onLoad, print } from "./utils";
-import { loadSettings, getSettings, changeTheme } from "./storage.ts"
+import { loadSettings, getSettings, changeTheme, loadSession, getSession, changeTab } from "./storage.ts"
 
 /** Switches to the relevant tab in response a click event. */
-function openTab(event) {
+async function openTab(event) {
+    setTab(event.currentTarget.name)
+    await changeTab(event.currentTarget.name)
+}
+
+function setTab(tab) {
     var tabs = document.getElementsByClassName("Tab")
     for (let i = 0; i < tabs.length; i++) {
         const element = tabs[i];
@@ -10,12 +15,18 @@ function openTab(event) {
         element.className.replace(" active", "")
     }
 
+    var tabElement = document.getElementById(tab)
+    tabElement.style.display = "block"
+
     var tabLink = document.getElementsByClassName("TabButton active")[0]
     tabLink.className = tabLink.className.replace(" active", "")
-
-    var tabElement = document.getElementById(event.currentTarget.name)
-    tabElement.style.display = "block"
-    event.currentTarget.className += " active"
+    for (let i = 0; i < document.getElementsByClassName("TabButton").length; i++) {
+        const button = document.getElementsByClassName("TabButton")[i];
+        if (button.name == tab) {
+            button.className += " active"
+            return
+        }
+    }
 }
 
 function addStyleSheet(path, className, id = "") {
@@ -39,6 +50,10 @@ async function setColorScheme(event) {
     await changeTheme(scheme);
 }
 
+async function setDefaultTab(event) {
+    
+}
+
 onLoad(async () => {
     // Listen for button clicks (tab changes)
     var buttons = document.getElementsByClassName("TabButton")
@@ -54,8 +69,13 @@ onLoad(async () => {
     }
 
     await loadSettings()
-    var theme = getSettings().lastTheme
-    setTheme(theme)
+    await loadSession()
+    var settings = getSettings()
+    setTheme(settings.lastTheme)
+    if (settings.defaultTab == "last") {
+        setTab(getSession().lastTab)
+    }
+    document.body.style.display = "initial"
 })
 
 function setTheme(scheme) {

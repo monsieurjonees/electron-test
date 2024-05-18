@@ -2,28 +2,6 @@ import { onLoad, print, camelToSnake, camelToHyphenated } from "./utils"
 
 var customStyle = {}
 
-// /**
-//  * Adds a style element to the document, modifying :root.
-//  * @param {string} newStyles A string of semicolon separated style parameters,
-//  * as in inline style overrides in HTML.
-//  * @param {boolean} overwrite Whether to overwrite any existing style overrides.
-//  */
-// function changeRootStyle(newStyles){//, overwrite = false) {
-//     // var rootStyle = document.getElementById("RootStyleOverride")
-//     var newStyle
-//     // if (rootStyle == null || overwrite) {
-//         newStyle.className = "RootStyleOverride"
-//         newStyle = document.createElement("style")
-//         newStyle.textContent = ":root { "
-//         // newStyle.id = "RootStyleOverride"
-//     // } else {
-//     //     newStyle = rootStyle
-//     //     newStyle.textContent = newStyle.textContent.replace("}", "")
-//     // }
-//     newStyle.textContent += newStyles + " }"
-//     document.head.appendChild(newStyle) 
-// }
-
 function changeRootStyle() {
     var currentRootStyle = document.getElementById("RootStyleOverride")
     var newStyle = document.createElement("style")

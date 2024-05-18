@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="src/themes/gay.css" class="Theme"/> -->
   </head>
   <header>
     <div class="TabBar" id="TabBar">
       <button class="TabButton active" name="Hello" style="margin-left: 2rem;">Hello</button>
       <button class="TabButton" name="ItsMe">It's Me</button>
+      <button class="TabButton" name="Todo">werk</button>
 
       <div style="flex-grow: 1;"></div>
 
@@ -25,7 +25,9 @@
       <button class="TabButton" style="margin-right: 0;" name="Settings">⚙️</button>
     </div>
   </header>
-  <body>
+  <body style="display: none;"> 
+    <!-- The diplay: none prevents the UI from appearing while JS loads themes
+    and potentially changes tabs. Must eventually revert to "initial" in JS. -->
     <div class="TabArea">
       <div id="Hello" class="Tab" style="display: block;">
         <h1>💖 Hello World!</h1>
@@ -66,6 +68,10 @@
         <h1>It's Me</h1>
         <p>🎵 The popular, hit single from Adele, released in 2015</p>
       </div>
+      <div id="Todo" class="Tab">
+        <h1>such task much do</h1>
+        <p>put tasks here</p>
+      </div>
       <div id="Wondering" class="Tab special">
         <h1>I was wondering</h1>
         <p>If after all these years you'd like to meet. To go over everything. They say that time's supposed to heal ya, but I ain't done much healin'</p>
@@ -80,7 +86,16 @@
         <button class="ThemeButton" name="gray">Gray.</button> <br>
         <button class="ThemeButton" name="bisexual">Bisexual.</button> <br>
         <button class="ThemeButton" name="matcha">Matcha.</button> <br>
-        </p>
+        <h2>etc.</h2>
+        <label for="DefaultTabMenu">Default Tab on Statrup</label>
+          <select name="defaultTab" id="DefaultTabMenu" onchange="console.log(event.currentTarget)">
+            <option name="Hello">Hello</option>
+            <option name="ItsMe">It's Me</option>
+            <option name="Customizer">le theme</option>
+            <option name="Wondering">I was Wondering</option>
+            <option name="Settings">Settings</option>
+            <option name="last">* Last Open</option>
+          </select>
       </div>
       <div id="Customizer" class="Tab">
         <h1>Ainsi tu inventes le theme du Narcisse exauce</h1>
@@ -101,7 +116,16 @@
         <!-- Not Text -->
         <form onchange="primaryColorEvent(event)">
             Primary Color: <input type="color" id="PrimaryColor">
-        </form>
+        </form><br>
+        To Implement:
+        <ol>
+          <li>Secondary Color</li>
+          <li>Container Background</li>
+          <li>Unselect Tab & shadow</li>
+          <li>Tab Hover</li>
+          <li>Primary Shadow</li>
+          <li>Secondary Shadow</li>
+        </ol>
       </div>
     </div>
   </body>

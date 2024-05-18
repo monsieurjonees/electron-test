@@ -1,9 +1,16 @@
 import { path } from "@tauri-apps/api"
 import { readTextFile, writeTextFile, BaseDirectory, exists, createDir } from "@tauri-apps/api/fs"
 
+const SETTINGS_FN = "settings.json"
+const SESSION_FN = "session.json"
 
 var settings = {
-    "lastTheme": ""
+    "lastTheme": "",
+    "defaultTab": "Hello"
+}
+
+var session = {
+    "lastTab": ""
 }
 
 async function checkAppDataValid() {
@@ -18,24 +25,63 @@ async function checkAppDataValid() {
 async function saveSettings() {
     await checkAppDataValid()
     var text = JSON.stringify(settings)
-    await writeTextFile("settings.json", text, {
+    await writeTextFile(SETTINGS_FN, text, {
         dir: BaseDirectory.AppConfig
     })
 }
 
 export async function loadSettings() {
+    try {
+        await checkAppDataValid()
+        var text = await readTextFile(SETTINGS_FN, {
+            dir: BaseDirectory.AppConfig
+        })
+        settings = JSON.parse(text)
+    } catch (error) {
+        await saveSettings()
+    }
+}
+
+async function saveSession() {
     await checkAppDataValid()
-    var text = await readTextFile("settings.json", {
+    var text = JSON.stringify(session)
+    await writeTextFile(SESSION_FN, text, {
         dir: BaseDirectory.AppConfig
     })
-    settings = JSON.parse(text)
+}
+
+export async function loadSession() {
+    try {
+        await checkAppDataValid()
+        var text = await readTextFile(SESSION_FN, {
+            dir: BaseDirectory.AppConfig
+        })
+        session = JSON.parse(text)
+    } catch (error) {
+        await saveSession()
+    }
 }
 
 export async function changeTheme(theme: string) {
-    settings["lastTheme"] = theme
+    settings.lastTheme = theme
+    await saveSettings()
+}
+
+export async function changeTab(tab: string) {
+    if (session.lastTab == tab) { return; }
+    session.lastTab = tab
+    await saveSession()
+}
+
+export async function changeDefaultTab(opt: string) {
+    settings.defaultTab = opt
     await saveSettings()
 }
 
 export function getSettings() {
     return settings
+}
+
+export function getSession() {
+    return session
 }
