@@ -127,3 +127,46 @@ div.DayColumn h4 {
   margin-bottom: 1ch;
   text-align: center;
 }
+
+.TaskBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TaskContainer {
+  margin-top: 0px;
+  background-color: var(--container-background);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color);
+}
+
+.Task {
+  margin-top: 0px;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+  /* box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color); */
+  
+}
+
+.Task input {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.Task .checkmark {
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  opacity: 1;
+  background-color: white;
+}
+
+.Spacer {
+  /* display: inline-flex; */
+  /* position: relative; */
+  flex-grow: 1;
+}
