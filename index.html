@@ -73,35 +73,42 @@
         <p>put tasks here</p>
         <div class="TaskBox">
           <div class="TaskContainer" style="flex-grow: 2;" id="taskContainer">
+            <h2>Tasks</h2>
             <div class="Task">
-              <div style="min-width: 2rem;">
-                <button onclick="taskButtonClicked(event)"></button>
-              </div>
-              <div style="flex-grow: 2;">
-                Title
-              </div>
-              <div style="flex-grow: 1;">
-                Category
-              </div>
-              <div style="flex-grow: 1; text-align: right;">
-                Due
-              </div>
+              <form onsubmit="addTaskFromList(event)" name="taskCreate" id="inlineTaskCreate" autocomplete="off">
+                <div style="width: 2rem;">
+                  <input type="submit" style="background: none; border: none;" value="➕">
+                </div>
+                <div style="width: 50%;">
+                  <input type = "text" id = "titleInput2" name = "titleInput" required style="width: 90%;">
+                </div>
+                <div style="width: 29%;">
+                  <select type = "text" id = "catInput" name = "titleInput" required style="width: 90%;">
+                    <option name="lesbian">Lesbian</option>
+                    <option name="gay">Gay</option>
+                    <option name="bisexual">Bisexual</option>
+                    <option name="transgender">Transgender</option>
+                    <option name="queer">Queer</option>
+                    <option name="plus">Plus</option>
+                  </select>
+                </div>
+                <div style="width: 19%; text-align: right;">
+                  <input type = "date" id = "deadlineDay" name = "deadlineDay" required>
+                </div>
+              </form>
             </div>
-            <button onclick="addTask()">
-              Add task
-            </button>
           </div>
           <div id="TaskDetailContainer" style="display: inline-flex; flex-grow: 1; max-width: 40%;">
             <div style="min-width: 2rem;"></div>
             <div class="TaskContainer" style="flex-grow: 1;">
-              <h4>Create a task</h4>
-              <h5>Task Info</h5>
-              <label for="titleInput">Title:</label>
-              <input type = "text" id = "titleInput" name = "titleInput" required> <br>
-              <label for="descInput">Description:</label>
-              <input type = "text" id = "descInput" name = "descInput"> <br>
-              <form>
-                <legend>Choose Task Categories</legend>
+              <h2>Create a task</h2>
+              <h3>Task Info</h3>
+              <form onsubmit="printEvent(event)" name="taskCreate" id="taskCreate" autocomplete="off">
+                <label for="titleInput">Title:</label>
+                <input type = "text" id = "titleInput" name = "titleInput" required> <br>
+                <label for="descInput">Description:</label>
+                <input type = "text" id = "descInput" name = "descInput"> <br>
+                <h3>Choose Task Categories</h3>
                 <div>
                   <input type = "radio" id="lesbian" name="Category">
                   <label for="lesbian">Lesbian</label>
@@ -115,15 +122,12 @@
                   <label for="queer">Queer</label>
                   <input type = "radio" id="plus" name="Category">
                   <label for="plus">Plus</label>
-
-                </div>
-              </form>              
-              <h5>Deadline</h5>
-              <input type = "date" id = "deadlineDay" name = "deadlineDay" required>
-              <input type = "time" id = "deadlineTime" name = "deadlineTime"> <br>
-              <button id="notifButton">
-                Added yay!
-              </button><br><br>
+                </div>             
+                <h3>Deadline</h3>
+                <input type = "date" id = "deadlineDay" name = "deadlineDay" required>
+                <input type = "time" id = "deadlineTime" name = "deadlineTime"> <br>
+                <input type="submit">
+              </form>
             </div>
           </div>
         </div>

@@ -29,6 +29,45 @@ function setTab(tab) {
     }
 }
 
+function printEvent(event) {
+    event.preventDefault()
+    print(event)
+    var element = event.srcElement
+    print(element.titleInput.value)
+    print(element.descInput.value)
+    var title = element.titleInput.value
+    var category
+    if (element.lesbian.checked) {
+        category = "Lesbian"
+    } else if (element.gay.checked) {
+        category = "Gay"
+    } else if (element.bisexual.checked) {
+        category = "Bisexual"
+    } else if (element.transgender.checked) {
+        category = "Transgender"
+    } else if (element.queer.checked) {
+        category = "Queer"
+    } else {
+        category = "Plus"
+    }
+    var due = element.deadlineDay.value
+    addTask(title, category, due)
+}
+window.printEvent = printEvent
+
+function addTaskFromList(event) {
+    event.preventDefault()
+    print(event)
+    var form = event.srcElement
+    var title = form.titleInput2.value
+    print(title)
+    var cat = form.catInput.value
+    print(cat)
+    var date = form.deadlineDay.value
+    addTask(title, cat, date)
+}
+window.addTaskFromList = addTaskFromList
+
 function addStyleSheet(path, className, id = "") {
     var newStyle = document.createElement("link")
     newStyle.type = "text/css"
@@ -60,7 +99,7 @@ function taskButtonClicked(event) {
 }
 window.taskButtonClicked = taskButtonClicked
 
-function addTask() {
+function addTask(title, cat, due) {
     var taskContainer = document.getElementById("taskContainer")
     var newTask = document.createElement("div")
     newTask.className = "Task"
@@ -68,14 +107,14 @@ function addTask() {
     <div style="min-width: 2rem;">
         <button onclick="taskButtonClicked(event)"></button>
     </div>
-    <div style="flex-grow: 2;">
-        Title
+    <div style="width: 50%;">
+        ${title}
     </div>
-    <div style="flex-grow: 1;">
-        Category
+    <div style="width: 29%;">
+        ${cat}
     </div>
-    <div style="flex-grow: 1; text-align: right;">
-        Due
+    <div style="width: 19%; text-align: right;">
+        ${due}
     </div>
     `
     taskContainer.appendChild(newTask)

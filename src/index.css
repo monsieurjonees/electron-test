@@ -31,6 +31,10 @@ button:hover {
   cursor: pointer;
 }
 
+button {
+  transition: ease-in-out 100ms;
+}
+
 .TabArea {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -154,18 +158,23 @@ div.DayColumn h4 {
   background-color: var(--secondary-color);
   padding: 1rem;
   border-radius: 1rem;
-  /* box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color); */
+  box-shadow: 0px 0px 0.25rem 0.025rem var(--primary-shadow-color);
   z-index: 1;
   position: relative;
   display: flex;
+  transition: ease-in-out 200ms;
 }
 
-.Task input {
-  position: relative;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.Task form {
+  display: flex;
+  flex-grow: 1;
+}
+
+.Task input, select {
+  border: none;
+  font-family: var(--primary-font-family);
+  text-shadow: 0 0 0.5rem var(--primary-shadow-color);
+  font-size: medium;
 }
 
 .Task button {
@@ -184,7 +193,6 @@ div.DayColumn h4 {
 .Task:hover {
   z-index: 10;
   box-shadow: 0px 0px 1rem 0.25rem var(--primary-shadow-color);
-  transition: ease-in-out 200ms;
 }
 
 .Spacer {
