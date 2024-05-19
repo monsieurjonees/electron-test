@@ -72,16 +72,59 @@
         <h1>such task much do</h1>
         <p>put tasks here</p>
         <div class="TaskBox">
-          <div class="TaskContainer" style="flex-grow: 2;">
+          <div class="TaskContainer" style="flex-grow: 2;" id="taskContainer">
             <div class="Task">
-              <input type="checkbox" class="checkmark">
-              hhhh
+              <div style="min-width: 2rem;">
+                <button onclick="taskButtonClicked(event)"></button>
+              </div>
+              <div style="flex-grow: 2;">
+                Title
+              </div>
+              <div style="flex-grow: 1;">
+                Category
+              </div>
+              <div style="flex-grow: 1; text-align: right;">
+                Due
+              </div>
             </div>
-            hhhhh
+            <button onclick="addTask()">
+              Add task
+            </button>
           </div>
-          <div style="min-width: 2rem;"></div>
-          <div class="TaskContainer" style="flex-grow: 1;">
-            hhhhh
+          <div id="TaskDetailContainer" style="display: inline-flex; flex-grow: 1; max-width: 40%;">
+            <div style="min-width: 2rem;"></div>
+            <div class="TaskContainer" style="flex-grow: 1;">
+              <h4>Create a task</h4>
+              <h5>Task Info</h5>
+              <label for="titleInput">Title:</label>
+              <input type = "text" id = "titleInput" name = "titleInput" required> <br>
+              <label for="descInput">Description:</label>
+              <input type = "text" id = "descInput" name = "descInput"> <br>
+              <form>
+                <legend>Choose Task Categories</legend>
+                <div>
+                  <input type = "radio" id="lesbian" name="Category">
+                  <label for="lesbian">Lesbian</label>
+                  <input type = "radio" id="gay" name="Category">
+                  <label for="gay">Gay</label>
+                  <input type = "radio" id="bisexual" name="Category">
+                  <label for="bisexual">Bisexual</label>
+                  <input type = "radio" id="transgender" name="Category">
+                  <label for="transgender">Transgender</label>
+                  <input type = "radio" id="queer" name="Category">
+                  <label for="queer">Queer</label>
+                  <input type = "radio" id="plus" name="Category">
+                  <label for="plus">Plus</label>
+
+                </div>
+              </form>              
+              <h5>Deadline</h5>
+              <input type = "date" id = "deadlineDay" name = "deadlineDay" required>
+              <input type = "time" id = "deadlineTime" name = "deadlineTime"> <br>
+              <button id="notifButton">
+                Added yay!
+              </button><br><br>
+            </div>
           </div>
         </div>
       </div>

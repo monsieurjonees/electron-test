@@ -50,9 +50,37 @@ async function setColorScheme(event) {
     await changeTheme(scheme);
 }
 
-async function setDefaultTab(event) {
-    
+function taskButtonClicked(event) {
+    var button = event.currentTarget
+    if (button.className == "clicked") {
+        button.className = ""
+    } else {
+        button.className = "clicked"
+    }
 }
+window.taskButtonClicked = taskButtonClicked
+
+function addTask() {
+    var taskContainer = document.getElementById("taskContainer")
+    var newTask = document.createElement("div")
+    newTask.className = "Task"
+    newTask.innerHTML = `
+    <div style="min-width: 2rem;">
+        <button onclick="taskButtonClicked(event)"></button>
+    </div>
+    <div style="flex-grow: 2;">
+        Title
+    </div>
+    <div style="flex-grow: 1;">
+        Category
+    </div>
+    <div style="flex-grow: 1; text-align: right;">
+        Due
+    </div>
+    `
+    taskContainer.appendChild(newTask)
+}
+window.addTask = addTask
 
 onLoad(async () => {
     // Listen for button clicks (tab changes)
